@@ -953,6 +953,42 @@ header nav .right .taggel-menu i {
   font-size: 18px;
 }
 
+#activebtv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+#activebtv .btn {
+  margin-right: 20px;
+  padding: 20px 25px;
+  background: none;
+  border: 1px solid #666;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+#activebtv .btn::after {
+  content: "";
+  position: absolute;
+  top: 71px;
+  left: 9px;
+  height: 20px;
+  width: 50px;
+  background: #868686;
+  transform: perspective(126px) rotateX(-120deg);
+  filter: blur(20px);
+}
+#activebtv .btn.active {
+  background-color: #ffff00;
+  color: #000;
+  box-shadow: 0 0 26px 1px #ffff00;
+  border: 1px solid #ffff00;
+}
+
 @media (min-width: 268px) {
   .container {
     width: 394px;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- * * main style sheet  -->
+  <link rel="stylesheet" href="./style/style.css">
+  <!-- * * fontawsome file -->
+  <link rel="stylesheet" href="./style/all.min.css">
+  <!-- * * normalize sheet file -->
+  <link rel="stylesheet" href="./style/normalize.css">
+
+  <!-- * * google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <title>animation template</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <div id="activebtv">
+      <button class="btn active">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+  <script>
+    // let activebtv = document.getElementById("activebtv");
+    // let btn = document.getElementsByClassName("btn");
+
+    // for(let i=0 ;i<btn.length; i++){
+    //   btn[i].addEventListener("click",function(){
+    //     var current =
+    //         document.getElementsByClassName("active");
+    //     current[0].className = current[0].className.replace("active","");
+    //     this.className += " active";
+    //   });
+    // }
+
+    let activebtv = document.getElementById("activebtv");
+    let btn = document.querySelectorAll("#activebtv .btn");
+
+    btn.forEach((e,index)=>{
+      e.addEventListener("click",(e1)=>{
+        var current =
+            document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active","");
+        e1.target.className += " active";
+      });
+    });
+
+  </script>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
