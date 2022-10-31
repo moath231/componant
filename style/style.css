@@ -42,6 +42,46 @@ a {
   margin-right: auto;
 }
 
+/*
+**
+**
+** browas project
+*/
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 50px 50px;
+}
+.projects .project {
+  border: 1px solid rgb(80, 77, 77);
+  box-shadow: 1px 1px 10px 1px rgba(151, 147, 147, 0.479), 1px 1px 10px 1px rgba(133, 128, 128, 0.486);
+}
+.projects .project img {
+  width: 100%;
+  height: 250px;
+}
+.projects .project video {
+  width: 100%;
+  height: 250px;
+}
+.projects .project .info {
+  color: white;
+  padding: 20px;
+}
+.projects .project .info h3 {
+  margin: 10px 0px;
+  text-transform: capitalize;
+}
+.projects .project .info p a {
+  color: rgb(226, 174, 174);
+}
+
+/*
+**
+**
+**
+*/
 .center, .front-face,
 .contents, .back-face {
   position: absolute;

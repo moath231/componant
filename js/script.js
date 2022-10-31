@@ -1,6 +1,6 @@
 function sidbar(){
   document.querySelector(".maxplus").classList.add("fa-gear");
-{/* <i class="fa-solid fa-gear"></i> */}
+
   document.querySelector(".fa-gear").addEventListener("click", () => {
     document.querySelector(".fillter").style.left = "0px";
     document.querySelector(".maxplus").classList.remove("fa-gear");
@@ -83,26 +83,12 @@ Qufillterspan();
 
 
 
-function query(min,max){
-  if(max.matches){
-    search.style.display = 'none';
-  }
-  if(min.matches){
-    search.style.display = 'block';
-  }
-}
+
 function navbartaggel(){
   let taggel_menu = document.querySelector(".taggel-menu");
   let overlay = document.querySelector(".overlay");
   let search = document.querySelector(".search");
   overlay.style.display = 'none';
-
-
-  let min = window.matchMedia("(min-width: 870px)");
-  let max = window.matchMedia("(max-width: 869px)");
-  query(min,max);
-  min.addListener(query);
-  max.addListener(query);
 
 
   taggel_menu.addEventListener("click",(e)=>{
@@ -114,6 +100,5 @@ function navbartaggel(){
       search.style.display = 'none';
     });
   });
-  console.log(window.innerWidth);
 }
 navbartaggel();
