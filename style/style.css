@@ -10,6 +10,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 *:focus {
@@ -1027,6 +1028,263 @@ header nav .right .taggel-menu i {
   color: #000;
   box-shadow: 0 0 26px 1px #ffff00;
   border: 1px solid #ffff00;
+}
+
+.multistepform {
+  background: -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.multistepform .contai {
+  width: 330px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.multistepform .contai header {
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.multistepform .contai .progress-bar {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.multistepform .contai .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.multistepform .contai .progress-bar .step p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.multistepform .contai .progress-bar .step p.active {
+  color: #d43f8d;
+  transition: 0.2s linear;
+}
+.multistepform .contai .progress-bar .step .bullet {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.multistepform .contai .progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -55%);
+}
+.multistepform .contai .progress-bar .step .bullet.active {
+  border-color: #d43f8d;
+  background: #d43f8d;
+}
+.multistepform .contai .progress-bar .step .bullet.active span {
+  display: none;
+}
+.multistepform .contai .progress-bar .step .bullet::before,
+.multistepform .contai .progress-bar .step .bullet::after {
+  position: absolute;
+  content: "";
+  bottom: 9px;
+  right: -43px;
+  height: 3px;
+  width: 40px;
+  background: #262626;
+}
+.multistepform .contai .progress-bar .step .bullet.active:after {
+  background: #d43f8d;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.multistepform .contai .progress-bar .step .check {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.multistepform .contai .progress-bar .step .check.active {
+  display: block;
+  color: #fff;
+}
+.multistepform .contai .progress-bar .step:last-child .bullet:before,
+.multistepform .contai .progress-bar .step:last-child .bullet:after {
+  display: none;
+}
+.multistepform .contai .form-outer {
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.multistepform .contai .form-outer form {
+  display: flex;
+  gap: 20px;
+  width: 400%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.multistepform .contai .form-outer form .page {
+  width: 25%;
+}
+.multistepform .contai .form-outer form .page .title {
+  text-transform: capitalize;
+  font-size: 30px;
+  text-align: left;
+  margin: 25px 0;
+}
+.multistepform .contai .form-outer form .page .field {
+  margin-top: 38px;
+}
+.multistepform .contai .form-outer form .page .field .label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.multistepform .contai .form-outer form .page .field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(192, 190, 190);
+}
+.multistepform .contai .form-outer form .page .field button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #d33f8d;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+.multistepform .contai .form-outer form .page .field select {
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.multistepform .contai .form-outer form .page .btns {
+  display: flex;
+  margin-top: 38px;
+  gap: 10px;
+}
+
+.progresscon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  text-align: center;
+}
+.progresscon #title {
+  margin-bottom: 90px;
+  text-align: center;
+}
+.progresscon .btn {
+  background-color: #9c27b0;
+  color: #fff;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 15px 55px;
+  margin: 5px;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.progresscon .btn:active {
+  transform: scale(0.97);
+}
+.progresscon .btn:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+.progresscon .progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 450px;
+  max-width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+.progresscon .progress-container .progress {
+  position: absolute;
+  background-color: #9c27b0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 0%;
+  left: 0;
+  z-index: 1;
+}
+.progresscon .progress-container .circle {
+  z-index: 1;
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border: 5px solid #bdbdbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+.progresscon .progress-container .circle .fab {
+  font-size: 50px;
+}
+.progresscon .progress-container .circle .fa-html5 {
+  color: #e34c26;
+}
+.progresscon .progress-container .circle .fa-css3-alt {
+  color: #264de4;
+}
+.progresscon .progress-container .circle .fa-js {
+  color: #f0db4f;
+  font-size: 44px;
+}
+.progresscon .progress-container .circle .fa-vuejs {
+  color: #42b883;
+}
+.progresscon .progress-container .circle.active {
+  border-color: #9c27b0;
+}
+.progresscon .progress-container::after {
+  content: "";
+  position: absolute;
+  background-color: #bdbdbd;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 100%;
+  left: 0;
+  z-index: 0;
 }
 
 @media (min-width: 268px) {

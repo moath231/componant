@@ -1,3 +1,22 @@
+console.log();
+if(window.location.pathname === "/shoppage.html"){
+  sidbar();
+  rangnumberonfillter();
+  navbartaggel();
+}
+if(window.location.pathname === "/multistepform.html"){
+  MULTISTEP();
+}
+if(window.location.pathname === "/progressstep.html"){
+  progressstep();
+}
+
+
+
+
+//
+//
+
 function sidbar(){
   document.querySelector(".maxplus").classList.add("fa-gear");
 
@@ -12,7 +31,7 @@ function sidbar(){
     });
   });
 }
-sidbar();
+
 
 
 function textsee() {
@@ -60,7 +79,7 @@ function rangnumberonfillter(){
     valuerange.dataset.value = valuerange.value;
   }
 }
-rangnumberonfillter();
+
 
 
 function Qufillterspan(){
@@ -101,4 +120,129 @@ function navbartaggel(){
     });
   });
 }
-navbartaggel();
+
+
+
+function MULTISTEP(){
+  let firstNext = document.querySelector(".multistepform .firstNext");
+  let prev_1 = document.querySelector(".multistepform .prev-1");
+  let next_1 = document.querySelector(".multistepform .next-1");
+  let prev_2 = document.querySelector(".multistepform .prev-2");
+  let next_2 = document.querySelector(".multistepform .next-2");
+  let prev_3 = document.querySelector(".multistepform .prev-3");
+  let submit = document.querySelector(".multistepform .submit");
+
+  let form = document.querySelector(".multistepform form");
+
+  let progress_bar = document.querySelectorAll(".progress-bar .step")
+  firstNext.addEventListener("click" , (event) => {
+    form.style.marginLeft = '-100%';
+    progress_bar[0].childNodes[1].classList.add("active");
+    progress_bar[0].childNodes[3].classList.add("active");
+    progress_bar[0].childNodes[5].classList.add("active");
+  });
+
+  prev_1.addEventListener("click" , (event) => {
+    form.style.marginLeft = '0%';
+    progress_bar[0].childNodes[1].classList.remove("active");
+    progress_bar[0].childNodes[3].classList.remove("active");
+    progress_bar[0].childNodes[5].classList.remove("active");
+
+  });
+
+  next_1.addEventListener("click" , (event) => {
+    form.style.marginLeft = '-200%';
+    progress_bar[1].childNodes[1].classList.add("active");
+    progress_bar[1].childNodes[3].classList.add("active");
+    progress_bar[1].childNodes[5].classList.add("active");
+  });
+
+  prev_2.addEventListener("click" , (event) => {
+    form.style.marginLeft = '-100%';
+    progress_bar[1].childNodes[1].classList.remove("active");
+    progress_bar[1].childNodes[3].classList.remove("active");
+    progress_bar[1].childNodes[5].classList.remove("active");
+  });
+
+  next_2.addEventListener("click" , (event) => {
+    form.style.marginLeft = '-300%';
+    progress_bar[2].childNodes[1].classList.add("active");
+    progress_bar[2].childNodes[3].classList.add("active");
+    progress_bar[2].childNodes[5].classList.add("active");
+  });
+
+  prev_3.addEventListener("click" , (event) => {
+    form.style.marginLeft = '-200%';
+    progress_bar[2].childNodes[1].classList.remove("active");
+    progress_bar[2].childNodes[3].classList.remove("active");
+    progress_bar[2].childNodes[5].classList.remove("active");
+  });
+
+  submit.addEventListener("click" , (event) => {
+    progress_bar[3].childNodes[1].classList.add("active");
+    progress_bar[3].childNodes[3].classList.add("active");
+    progress_bar[3].childNodes[5].classList.add("active");
+    alert("you are success sginUp ");
+
+    prev_3.style.display = 'none';
+    // user-select: none;
+  });
+
+}
+
+
+
+function progressstep(){
+  var prev =document.getElementById("prev");
+  var next =document.getElementById("next");
+  var progress =document.querySelector(".progress-container .progress");
+  var circle =document.querySelectorAll(".progress-container .circle");
+
+  var curent = 1;
+
+  next.addEventListener("click",() => {
+    curent++;
+    if(curent>circle.length){
+      curent=circle.length
+    }
+    update();
+  });
+
+  prev.addEventListener("click",() => {
+    curent--;
+    if(curent<1){
+      curent=1
+    }
+    update();
+  });
+
+  function update(){
+    circle.forEach((circ,ex)=>{
+      if(ex < curent){
+        circ.classList.add("active")
+      }else{
+        circ.classList.remove("active");
+      }
+    });
+
+    const actives = document.querySelectorAll(".active");
+
+    // console.log(((actives.length-1) / (circle.length-1))*100);
+
+    progress.style.width = (((actives.length-1) / (circle.length-1))*100)+"%";
+
+    if(curent===1){
+      prev.disabled =true;
+    }else if(curent === circle.length){
+      next.disabled =true;
+    }else{
+      prev.disabled = false;
+      next.disabled = false;
+    }
+
+  }
+}
+
+
+
+
