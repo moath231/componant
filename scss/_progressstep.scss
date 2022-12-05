@@ -1,0 +1,111 @@
+$border-fill: #9c27b0;
+$border-empty: #bdbdbd;
+
+.progresscon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  text-align: center;
+
+  // overflow: hidden;
+  #title {
+    margin-bottom: 90px;
+    text-align: center;
+  }
+
+  .btn{
+    background-color: $border-fill;
+    color: #fff;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 15px 55px;
+    margin: 5px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+  .btn:active{
+    transform: scale(.97);
+  }
+  .btn:disabled{
+    background-color: $border-empty;
+    cursor: not-allowed;
+  }
+
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 450px;
+    max-width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+
+    .progress {
+      position: absolute;
+      background-color: $border-fill;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 5px;
+      width: 0%;
+      left: 0;
+      z-index: 1;
+    }
+
+    .circle {
+      z-index: 1;
+      background-color: #fff;
+      color: #999;
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      border:5px solid $border-empty;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.4s ease;
+
+      .fab {
+        font-size: 50px;
+      }
+
+      .fa-html5 {
+        color: #e34c26;
+      }
+
+      .fa-css3-alt {
+        color: #264de4;
+      }
+
+      .fa-js {
+        color: #f0db4f;
+        font-size: 44px;
+      }
+
+      .fa-vuejs {
+        color: #42b883;
+      }
+    }
+    .circle.active{
+      border-color: $border-fill;
+    }
+  }
+
+  .progress-container::after {
+    content: '';
+    position: absolute;
+    background-color: $border-empty;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5px;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+  }
+}

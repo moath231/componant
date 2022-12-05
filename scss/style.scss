@@ -1,0 +1,134 @@
+:root {
+  --main-color: #19c8fa;
+  --sec-color: rgb(15 116 143 /70%);
+  --gloubl-padding: 100px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+*:focus{
+  outline: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1f2125;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*
+**
+**
+** browas project
+*/
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 20px;
+  padding: 50px 50px;
+  .project{
+    border: 1px solid rgb(80, 77, 77);
+    box-shadow: 1px 1px 10px 1px rgba(151, 147, 147, 0.479) ,1px 1px 10px 1px rgba(133, 128, 128, 0.486);
+      img{
+        width: 100%;
+        height: 250px;
+      }
+      video{
+        width: 100%;
+        height: 250px;
+      }
+      .info{
+        color: white;
+        padding: 20px;
+        h3{
+          margin: 10px 0px;
+          text-transform: capitalize;
+        }
+        p{
+          a{
+            color: rgb(226, 174, 174)
+          }
+        }
+      }
+  }
+}
+
+/*
+**
+**
+**
+*/
+
+
+@import '_card.scss';
+@import '_shoppage.scss';
+@import '_activebtn.scss';
+@import '_multistepform.scss';
+@import '_progressstep.scss';
+
+
+
+
+
+@media (min-width: 268px) {
+  .container {
+    width: 394px;
+  }
+}
+
+@media (min-width: 540px) {
+  .container {
+    width: 530px;
+  }
+}
+
+// small screen
+@media (min-width: 768px) {
+  .container {
+    width: 780px;
+  }
+}
+
+// medium screen
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+// larg screen
+@media (min-width: 1200px) {
+  .container {
+    width: 1165px;
+  }
+}
+@media (min-width: 1500px) {
+  .container {
+    width: 1465px;
+  }
+}
